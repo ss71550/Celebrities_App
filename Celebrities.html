@@ -1,66 +1,66 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="Celebrities.css"/>
-        <title>Celebrities</title>
-    </head>
 
-    <body>
-       <!--Direction divs-->
-<<<<<<< HEAD
-        <div class="welcome">
-            <h1>Welcome!</h1>
-            <h2>How to play:</h2>
-            <h3>In this game, players on each team will attempt to guess the celebrity their team member has on their card. There will be three rounds. In the first round, the acting team member can say anything but the celebrity's name. In round 2, they can only say three words, and in round 3, they can only act. </h3>
-            <h3> Each actor has a minute to make their team gues as many celebrities as possible. Each celebrity guessed is a point for their team. When the minute is up, a player from the next team has a chance to act for a minute...and so on until the cards for that round are used up.</h3>
-            <h2>Good luck!></h2>
-        </div>
-        <div class="step1"></div>
-            <h1>Step 1: Make Cards</h1>
-            <h2>Enter the name of a celebrity into the text box and "add" to the stack. Each player enters 3 names.</h2>
-            <h3>Remember, only add names that the majority of the group will know!</h3>
+<head>
+    <link rel="stylesheet" href="Celebrities.css" />
+    <title>Celebrities</title>
+</head>
 
-        <div class="step2"></div>
-            <h1>Step 2: Make teams</h1>
-            <h2>Split into 2 equal teams. Enter team names below.</h2>
+<body>
+    <!--Direction divs-->
+    <div class="welcome">
+        <h1>Welcome!</h1>
+        <h2>How to play:</h2>
+        <h3>In this game, players on each team will attempt to guess the celebrity their team member has on their card. There will be three rounds. In the first round, the acting team member can say anything but the celebrity's name. In round 2, they can only say three words, and in round 3, they can only act. </h3>
+        <h3> Each actor has a minute to make their team gues as many celebrities as possible. Each celebrity guessed is a point for their team. When the minute is up, a player from the next team has a chance to act for a minute...and so on until the cards for that round are used up.</h3>
+        <h2>Good luck!></h2>
 
-        <div class="round1"></div>
-            <h1>Round 1</h1>
-            <h2> This is your first time seeing the cards, so, in this round, the acting team member can say anything but the celebrity's name.You have a minute to go through as many cards as possible.</h2>
-            <h3>Team __ is up for the first minute!</h3>
+        <button id="getStarted">Get Started</button>
+    </div>
+    <div class="step1">
+        <h1>Step 1: Make Cards</h1>
+        <h2>Enter the name of a celebrity into the text box and "add" to the stack. Each player enters 3 names.</h2>
+        <h3>Remember, only add names that the majority of the group will know!</h3>
 
-        <div class="round2"></div>
-            <h1>Round 2</h1>
-            <h2> In this round, the acting team member can ONLY say 3 words. Chose carefully!You have a minute to go through as many cards as possible.</h2>
-            <h3>Team __ is up for the first minute!</h3>
+        <button id="addCard">add</button>
+        <button id="finishedCards">Finished Making Cards</button>
+    </div>
+    <div class="step2">
+        <h1>Step 2: Make teams</h1>
+        <h2>Split into 2 equal teams. Enter team names below.</h2>
 
-        <div class="round3"></div>
-            <h1>Round 3</h1>
-            <h2> In this (last) round, the acting team member can NOT speak, only acting. You have a minute to go through as many cards as possible.</h2>
-            <h3>Team __ is up for the first minute!</h3>
+        <button id="beginGame">Begin Game</button>
+    </div>
+    <div class="round1">
+        <h1>Round 1</h1>
+        <h2> This is your first time seeing the cards, so, in this round, the acting team member can say anything but the celebrity's name.You have a minute to go through as many cards as possible.</h2>
+        <h3>Team __ is up for the first minute!</h3>
 
-        <!--gameBoard div-->
-=======
-        <div class="welcome"></div>
-             <button id="getStarted">Get Started</button>
-        <div class="step1"></div>
-             <button id="addCard">add</button>
-             <button id="finishedCards">Finished Making Cards</button>
-        <div class="step2"></div>
-             <button id="beginGame">Begin Game</button>
-        <div class="round1"></div>
-             <button id="start1">Start Round 1</button>
-        <div class="round2"></div>
-             <button id="start2">Start Round 2</button>
-        <div class="round2"></div>
-             <button id="start3">Start Round 3</button>
->>>>>>> master/master
-        <div class="gameBoard"></div>
+        <button id="start1">Start Round 1</button>
+    </div>
+    <div class="round2">
+        <h1>Round 2</h1>
+        <h2> In this round, the acting team member can ONLY say 3 words. Chose carefully!You have a minute to go through as many cards as possible.</h2>
+        <h3>Team __ is up for the first minute!</h3>
 
-        <div class="Congrats"></div>
-             <button id="playAgain">Play Again</button>
-       <!--Links-->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="Animated_java.js"></script>
+        <button id="start2">Start Round 2</button>
+    </div>
+    <div class="round3">
+        <h1>Round 3</h1>
+        <h2> In this (last) round, the acting team member can NOT speak, only acting. You have a minute to go through as many cards as possible.</h2>
+        <h3>Team __ is up for the first minute!</h3>
 
-    </body>
+        <button id="start3">Start Round 3</button>
+    </div>
+    <!--gameBoard div-->
+
+    <div class="gameBoard"></div>
+
+    <div class="Congrats"></div>
+    <button id="playAgain">Play Again</button>
+    <!--Links-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="Animated_java.js"></script>
+
+</body>
+
 </html>
