@@ -6,25 +6,13 @@ top: 200px
 }
 
 .welcome{
-
+width: 500 px;
+height: 500px;
+left: 200px
+top: 200px
 }
 
-.step1{
 
-}
-
-.step2{
-
-}
-
-.round1{
-
-}
-
-.round2{
-
-}
-
-.round3{
-
+body{
+color: red;
 }
