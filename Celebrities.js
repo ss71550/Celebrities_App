@@ -18,6 +18,16 @@ $getStartedButton.on({
     }
 });
 
+$("#add_card").click(() => {
+    let celebrity_card = $("#card_input").val();
+    addItem(celebrity_card);
+});
+        function addItem(val){
+            let $celebs = $("<li><li>");
+            $celebs.text(val);
+            $celebs.addClass("Round1_Cards");
+            $("#list").append($celebs);
+        }
 $finishedCards.on({
     click: () => {
       $step2.show();
