@@ -1,13 +1,13 @@
 $(document).ready(() => {
   let $popUps= $("#popUps")
   $popUps.hide();
-  
+
   let $welcome = $(".welcome");
   let $getStartedButton = $("#getStarted");
 
   let $step1 = $(".step1");
   let $finishedCards = $("#finishedCards");
-  
+
   let $step2 = $(".step2");
   let $beginGame = $("#beginGame");
 
