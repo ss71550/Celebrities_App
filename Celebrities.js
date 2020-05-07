@@ -1,15 +1,17 @@
 $(document).ready(() => {
-  let $popUps= $("#popUps")
+  let $popUps= $("#popUps");
   $popUps.hide();
 
   let $welcome = $(".welcome");
   let $getStartedButton = $("#getStarted");
 
   let $step1 = $(".step1");
+  let $addCard= $("#add_card");
   let $finishedCards = $("#finishedCards");
 
   let $step2 = $(".step2");
   let $beginGame = $("#beginGame");
+
 
 $getStartedButton.on({
     click: () => {
@@ -18,17 +20,13 @@ $getStartedButton.on({
     }
 });
 
-$("#add_card").click(() => {
+let $round1= [];
+$addCard.on({
+    click: () => {
     let celebrity_card = $("#card_input").val();
-    addItem(celebrity_card);
+    $round1.push("celebrity_card");
+    }
 });
-
-function addItem(val){
-  let $celebs = $("<li><li>");
-  $celebs.text(val);
-  $celebs.addClass("Round1_Cards");
-  $("#list").append($celebs);
-}
 
 $finishedCards.on({
     click: () => {
@@ -39,6 +37,8 @@ $finishedCards.on({
 
 $beginGame.on({
     click: () => {
+      let team_name1 = $("#name1").val();
+      let team_name2 = $("#name2").val();//let's remember to make these values fill in the blanks
       $round1.show();
       $step2.hide();
     }
