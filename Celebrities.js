@@ -1,6 +1,7 @@
 $(document).ready(() => {
   let $popUps= $("#popUps");
   $popUps.hide();
+//javascript only fetching step one for id, when should fetch all divs
 
   let $welcome = $(".welcome");
   let $getStartedButton = $("#getStarted");
