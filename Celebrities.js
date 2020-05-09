@@ -21,7 +21,7 @@ $getStartedButton.on({
     }
 });
 
-let $round1= [];
+let $round1= [];//round 1 card array
 $addCard.on({
     click: () => {
     let celebrity_card = $("#card_input").val();
