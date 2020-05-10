@@ -22,6 +22,9 @@ $(document).ready(() => {
   let $round3 = $("#round3");
   let $start3 = $("#start3");
 
+  let $pass= $("#pass");
+  let $gotIt= $("#gotIt")
+
 
 $getStartedButton.on({
     click: () => {
