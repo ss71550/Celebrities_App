@@ -65,16 +65,16 @@ $gotIt.on("click",()=>{
     array2Cards.push(current_card);
     array1Cards.pop(current_card);
 });
+
 $pass.on("click",()=>{
     //new randomly selected card
 });
 
-  $start2.on({
+$start2.on({
     click: () => {
       $round2.hide();
     }
 });
 
 
-});
 })
