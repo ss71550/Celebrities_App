@@ -67,13 +67,9 @@ $gotIt.on("click",()=>{
     array1Cards.pop(current_card);
     //add pt to scoreboard
 });
-<<<<<<< HEAD
-//$pass.on("click",()=>{
-=======
 
-$pass.on("click",()=>{
->>>>>>> origin/master
-    //new randomly selected card
+//$pass.on("click",()=>{
+//new randomly selected card
 //});
 
 $start2.on({
