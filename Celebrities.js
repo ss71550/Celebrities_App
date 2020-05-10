@@ -37,7 +37,6 @@ let round1Cards= [];//round 1 card array
 $addCard.on("click",()=>{
     let celebrity_card = $("#card_input").val();
     round1Cards.push(celebrity_card);
-    }
 });
 
 $finishedCards.on({
