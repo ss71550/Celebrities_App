@@ -77,4 +77,31 @@ $start2.on({
 });
 
 
+//60 second count down timer
+    //have it so it starts timer when randomly selected card shows
+  let $time = $("#timer");
+  timerId = setInterval(timerFunction, 10);
+  let start = new Date();// current time
+  let alarmInterval = 600;
+  let countDown = 600;
+  let alarm = start.getTime() + alarmInterval;  // Set the alarm
+
+  function timerFunction() {
+    // Check the time
+    let now = new Date();
+    let currentTime = now.getTime();
+
+    // Update the timer text
+    if (countDown < 0) {
+      countDown = 0;
+      clearInterval(timerId);
+        //goes to next team, new card displayed
+        //checks if more cards, if not, shows next round
+    } else {
+      countDown = countDown - .1;
+    }
+    $time.text(Math.floor(countDown)/10);
+  }
+
+
 })
