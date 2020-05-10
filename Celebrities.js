@@ -33,10 +33,10 @@ $getStartedButton.on({
     }
 });
 
-let round1Cards= [];//round 1 card array
+let array1Cards= [];//array 1 card array
 $addCard.on("click",()=>{
     let celebrity_card = $("#card_input").val();
-    round1Cards.push(celebrity_card);
+    array1Cards.push(celebrity_card);
 });
 
 $finishedCards.on({
@@ -60,6 +60,15 @@ $beginGame.on({
     click: () => {
       $round1.hide();
     }
+});
+let array2Cards= [];//round 2 card array
+$gotIt.on("click",()=>{
+    let current_card = $("#card_input").val();//instead of having the celebrtiy_card, which is the input of the text box, make it be the item that was randomly selected. So,
+    array2Cards.push(current_card);
+    array1Cards.pop(current_card);
+});
+$pass.on("click",()=>{
+    //new randomly selected card
 });
 
   $start2.on({
