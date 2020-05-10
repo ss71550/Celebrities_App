@@ -1,11 +1,11 @@
-#popUps{
+.popUps{
 width: 500 px;
 height: 500px;
 left: 200px
 top: 200px
 }
 
-.welcome{
+#welcome{
 width: 500 px;
 height: 500px;
 left: 200px

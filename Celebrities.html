@@ -7,7 +7,7 @@
 
 <body>
     <!--Direction divs-->
-    <div class="welcome">
+    <div id="welcome">
         <h1>Welcome!</h1>
         <h2>How to play:</h2>
         <h3>In this game, players on each team will attempt to guess the celebrity their team member has on their card. There will be three rounds. In the first round, the acting team member can say anything but the celebrity's name. In round 2, they can only say three words, and in round 3, they can only act. </h3>
@@ -17,7 +17,7 @@
         <button id="getStarted">Get Started</button>
     </div>
 
-    <div class="step1" id="popUps">
+    <div id="step1" class="popUps">
         <h1>Step 1: Make Cards</h1>
         <h2>Enter the name of a celebrity into the text box and "add" to the stack. Each player enters 3 names.</h2>
         <h3>Remember, only add names that the majority of the group will know!</h3>
@@ -30,7 +30,7 @@
         <button id="finishedCards">Finished Making Cards</button>
     </div>
 
-    <div class="step2" id="popUps">
+    <div id="step2" class="popUps">
         <h1>Step 2: Make teams</h1>
         <h2>Split into 2 equal teams. Enter team names below.</h2>
         <h3>Team 1</h3>
@@ -40,21 +40,21 @@
         <button id="beginGame">Begin Game</button>
     </div>
 
-    <div class="round1" id="popUps">
+    <div id="round1" class="popUps">
         <h1>Round 1</h1>
         <h2> This is your first time seeing the cards, so, in this round, the acting team member can say anything but the celebrity's name.You have a minute to go through as many cards as possible.</h2>
         <h3>Team __ is up for the first minute!</h3>
 
         <button id="start1">Start Round 1</button>
     </div>
-    <div class="round2" id="popUps">
+    <div id="round2" class="popUps">
         <h1>Round 2</h1>
         <h2> In this round, the acting team member can ONLY say 3 words. Chose carefully!You have a minute to go through as many cards as possible.</h2>
         <h3>Team __ is up for the first minute!</h3>
 
         <button id="start2">Start Round 2</button>
     </div>
-    <div class="round3" id="popUps">
+    <div id="round3" class="popUps">
         <h1>Round 3</h1>
         <h2> In this (last) round, the acting team member can NOT speak, only acting. You have a minute to go through as many cards as possible.</h2>
         <h3>Team __ is up for the first minute!</h3>
@@ -63,12 +63,14 @@
     </div>
     <!--gameBoard div-->
 
-    <div class="gameBoard">
+    <div id="gameBoard">
 
     </div>
 
-    <div class="Congrats"></div>
+    <div id="Congrats" class="popUps">
     <button id="playAgain">Play Again</button>
+    </div>
+
     <!--Links-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="Celebrities.js"></script>
