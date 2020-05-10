@@ -19,8 +19,6 @@ $(document).ready(() => {
   let $round2 = $("#round2");
   let $start2 = $("#start2");
 
-  let $round3 = $("#round3");
-  let $start3 = $("#start3");
 
   let $pass= $("#pass");
   let $gotIt= $("#gotIt")
@@ -77,9 +75,6 @@ $pass.on("click",()=>{
     }
 });
 
-  $start3.on({
-    click: () => {
-      $round3.hide();
-    }
+
 });
 })
