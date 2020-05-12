@@ -1,6 +1,10 @@
 $(document).ready(() => {
   let $popUps= $(".popUps");
+  let $gameBoard = $("#gameBoard");
+  let $teamUp= $("#teamUp")
   $popUps.hide();
+  $gameBoard.hide();
+  $teamUp.hide();
 //javascript only fetching step one for id, when should fetch all divs
 
   let $welcome = $("#welcome");
@@ -23,6 +27,8 @@ $(document).ready(() => {
   let $pass= $("#pass");
   let $gotIt= $("#gotIt")
 
+
+  let $startTimer= $("#startTimer")
 
 $getStartedButton.on({
     click: () => {
@@ -53,24 +59,52 @@ $beginGame.on({
     }
 });
 
+
  //the following hide round directions= gameboard beneath
  $start1.on({
     click: () => {
       $round1.hide();
+      $teamUp.show();
     }
 });
 
-let array2Cards= [];//round 2 card array
-$gotIt.on("click",()=>{
-    let current_card = $("#card_input").val();//instead of having the celebrtiy_card, which is the input of the text box, make it be the item that was randomly selected. So,
-    array2Cards.push(current_card);
-    array1Cards.pop(current_card);
-    //add pt to scoreboard
+    let $teamName= $("#teamName");
+
+  $startTimer.on({
+    click: () => {
+      $teamUp.hide();
+      $teamName.textContent += "You're up";
+      $gameBoard.show();
+      selectArray1Card();
+}
 });
 
-//$pass.on("click",()=>{
+//randomly select and display cards from array1
+//happens when pass, got it, or start timer clicked
+function selectArray1Card(){
+ let numb= array1Cards.length;
+ var randomNum= Math.floor(Math.random()*numb);
+ var celebName= array1Cards[randomNum];
+ let $celebrityName= $("#celebrityName");
+ //check that += thing right
+ $celebrityName.textContent += "celebName";
+}
+
+
+let array2Cards= [];//round 2 card array
+$gotIt.on("click",()=>{
+    //should name this function so can just call it rather than have all code here
+    {let current_card = $("#card_input").val();//instead of having the celebrtiy_card, which is the input of the text box, make it be the item that was randomly selected. So,
+    array2Cards.push(current_card);
+    array1Cards.pop(current_card);}
+    //add pt to scoreboard
+    selectArray1Card();
+});
+
+$pass.on("click",()=>{
 //new randomly selected card
-//});
+    selectArray1Card();
+});
 
 $start2.on({
     click: () => {
@@ -78,6 +112,7 @@ $start2.on({
     }
 });
 
+//FIGURE OUT HOW TO SHOW TEAMSUP MESSAGE FOR MULTOPE DIFFERENT ROUNDS, but same button
 
 //60 second count down timer
     //have it so it starts timer when randomly selected card shows
