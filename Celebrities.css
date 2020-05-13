@@ -8,6 +8,26 @@ z-index: 1;
 background: beige;
 }
 
+.teamBox1{
+background-color: lightblue;
+  margin: 2%;
+  padding: 2%;
+  border: 5px pink;
+  width: 40%;
+  position: relative;
+  float: left;
+}
+
+.teamBox2{
+ background-color: lightcoral;
+  margin: 2%;
+  padding: 2%;
+  border: 5px pink;
+  width: 40%;
+  position: relative;
+  float: right;
+}
+
 #welcome{
 width: 300 px;
 height: 400px;
@@ -46,3 +66,4 @@ color: black;
 margin: 30px;
 
 }
+

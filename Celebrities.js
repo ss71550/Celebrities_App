@@ -37,7 +37,7 @@ $getStartedButton.on({
     }
 });
 
-let array1Cards= [];//array 1 card array
+let array1Cards=[];//array 1 card array
 $addCard.on("click",()=>{
     let celebrity_card = $("#card_input").val();
     array1Cards.push(celebrity_card);
