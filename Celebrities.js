@@ -11,7 +11,7 @@ $(document).ready(() => {
   let $getStartedButton = $("#getStarted");
 
   let $step1 = $("#step1");
-  let $addCard= $("#add_card");
+  let $addCard= $("#add_Card");
   let $finishedCards = $("#finishedCards");
 
   let $step2 = $("#step2");
