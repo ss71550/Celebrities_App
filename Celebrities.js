@@ -1,10 +1,9 @@
 $(document).ready(() => {
   let $popUps= $(".popUps");
   let $gameBoard = $("#gameBoard");
-  let $teamUp= $("#teamUp")
   $popUps.hide();
   $gameBoard.hide();
-  $teamUp.hide();
+
 //javascript only fetching step one for id, when should fetch all divs
 
   let $welcome = $("#welcome");
@@ -25,10 +24,16 @@ $(document).ready(() => {
 
 
   let $pass= $("#pass");
-  let $gotIt= $("#gotIt")
+  let $gotIt= $("#gotIt");
 
 
-  let $startTimer= $("#startTimer")
+  let $startTimer= $("#startTimer");
+
+  let $team1= $("team1");
+  let $team1= $("team1");
+
+  let $teamUp1= $("#teamUp1");
+  let $teamUp2= $("#teamUp2");
 
 $getStartedButton.on({
     click: () => {
@@ -50,11 +55,13 @@ $finishedCards.on({
     }
 });
 
+    let team_name1 = $("#name1").val();
+    let team_name2 = $("#name2").val();//let's remember to make these values fill in the blanks
+
 $beginGame.on({
     click: () => {
-      let team_name1 = $("#name1").val();
-      let team_name2 = $("#name2").val();//let's remember to make these values fill in the blanks
       $round1.show();
+      $teamUp1.textContent= "team_name1";
       $step2.hide();
     }
 });
@@ -64,18 +71,20 @@ $beginGame.on({
  $start1.on({
     click: () => {
       $round1.hide();
-      $teamUp.show();
+      $gameBoard.show();
+    $team1.textContent= "team_name1";
+    $team2.textContent= "team_name2";
     }
 });
 
-    let $teamName= $("#teamName");
+   // let $teamName= $("#teamName");
 
-  $startTimer.on({
-    click: () => {
-      $teamUp.hide();
-      $teamName.textContent += "You're up";
-      $gameBoard.show();
-      selectArray1Card();
+$startTimer.on({
+   click: () => {
+       timerFunction();
+
+    //  $teamName.textContent += "You're up";
+     // selectArray1Card();
 }
 });
 
@@ -99,6 +108,7 @@ $gotIt.on("click",()=>{
     array2Cards.push("mainEvent");
     array1Cards.splice("arrayNumb", 1);
     //add to scoreboard
+
     selectArray1Card();//is this the way to call back to the rendom # function?
 });
 
@@ -109,6 +119,7 @@ $pass.on("click",()=>{
 $start2.on({
     click: () => {
       $round2.hide();
+      $gameBoard.show();
     }
 });
 
@@ -116,14 +127,16 @@ $start2.on({
 
 //60 second count down timer
     //have it so it starts timer when randomly selected card shows
-  let $time = $("#timer");
+
+  function timerFunction() {
+
+       let $time = $("#timer");
   timerId = setInterval(timerFunction, 10);
   let start = new Date();// current time
   let alarmInterval = 600;
   let countDown = 600;
   let alarm = start.getTime() + alarmInterval;  // Set the alarm
 
-  function timerFunction() {
     // Check the time
     let now = new Date();
     let currentTime = now.getTime();

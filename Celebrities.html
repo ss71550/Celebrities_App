@@ -23,11 +23,11 @@
         <h3>Remember, only add names that the majority of the group will know!</h3>
         <ul>
 
-        <div>
-            <input id="card_input" type="text" />
-            <button id="add_Card">add</button>
-        </div>
-        <button id="finishedCards">Finished Making Cards</button>
+            <div>
+                <input id="card_input" type="text" />
+                <button id="add_Card">add</button>
+            </div>
+            <button id="finishedCards">Finished Making Cards</button>
     </div>
 
     <div id="step2" class="popUps">
@@ -43,15 +43,16 @@
     <div id="round1" class="popUps">
         <h1>Round 1</h1>
         <h2> This is your first time seeing the cards, so, in this round, the acting team member can say anything but the celebrity's name.You have a minute to go through as many cards as possible.</h2>
-        <h3>Team __ is up for the first minute!</h3>
-
+        <h3 id="teamUp2">Team __</h3>
+        <h3>is up for the first minute!</h3>
         <button id="start1">Start Round 1</button>
     </div>
 
     <div id="round2" class="popUps">
         <h1>Round 2</h1>
         <h2> In this round, the acting team member can ONLY say 3 words. Chose carefully!You have a minute to go through as many cards as possible.</h2>
-        <h3>Team __ is up for the first minute!</h3>
+        <h3 id="teamUp2">Team __</h3>
+        <h3>is up for the first minute!</h3>
 
         <button id="start2">Start Round 2</button>
     </div>
@@ -59,8 +60,8 @@
     <!--gameBoard div-->
 
     <div id="gameBoard">
-      <h2>Round __</h2>
-      <h3>Act this out:</h3>
+        <h2>Round __</h2>
+        <h3>Act this out:</h3>
         <div id="cardDisplay">
             <h3 id="celebrityName"></h3>
             <button id="pass">Pass</button>
@@ -77,16 +78,12 @@
             <h3 id="team2Score"></h3>
         </div>
 
+        <h2>Start Timer when you're ready for your card</h2>
+        <button id="startTimer">Start</button>
+
         <div id="timer">
 
         </div>
-
-    </div>
-
-    <div id="teamUp">
-        <h2 id= "teamName"></h2>
-        <h2> is up. Click the button to receive your first card and start the timer</h2>
-        <button id="startTimer">Start Timer!</button>
 
     </div>
 
