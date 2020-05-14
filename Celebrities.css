@@ -8,14 +8,18 @@ z-index: 1;
 background: beige;
 }
 
+#getStarted{
+    background-color: darkseagreen;
+}
 .teamBox1{
 background-color: lightblue;
   margin: 2%;
   padding: 2%;
   border: 5px pink;
-  width: 40%;
+  width: 20%;
   position: relative;
   float: left;
+  text-align: center;
 }
 
 .teamBox2{
@@ -23,9 +27,10 @@ background-color: lightblue;
   margin: 2%;
   padding: 2%;
   border: 5px pink;
-  width: 40%;
+  width: 20%;
   position: relative;
   float: right;
+  text-align: center;
 }
 
 #welcome{
@@ -38,6 +43,14 @@ z-index: 1;
 background: beige;
 }
 
+#start1{
+    background-color: darkseagreen;
+}
+
+#start2{
+    background-color: darkseagreen;
+}
+
 #gameboard{
 width: 300 px;
 height: 400px;
@@ -46,12 +59,46 @@ padding: 30px;
 z-index: -1;
 position: relative;
 }
+#timer{
+  background-color: beige;
+  margin: 2%;
+  padding: 1%;
+  border: 5px pink;
+  width: 10%;
+  height: 20%;
+  position: relative;
+  margin-left: 350px;
+  margin-bottom: 1px;
+  text-align: center;
+}
+
+#startTimer{
+    background-color: lightgreen;
+}
+
+#add_Card{
+  background-color: lightblue;
+}
+
+#finishedCards{
+  background-color: darkseagreen;
+}
 
 #cardDisplay{
 width: 200 px;
 height: 200px;
 
 background: beige;
+}
+#pass{
+  background-color: red;
+}
+#gotIt{
+    background-color: lightgreen;
+}
+
+#beginGame{
+  background-color: darkseagreen;
 }
 
 #teamUp{

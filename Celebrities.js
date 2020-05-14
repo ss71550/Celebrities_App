@@ -93,17 +93,17 @@ function selectArray1Card(){
 
 let array2Cards= [];//round 2 card array
 $gotIt.on("click",()=>{
-    //should name this function so can just call it rather than have all code here
-    {let current_card = $("#card_input").val();//instead of having the celebrtiy_card, which is the input of the text box, make it be the item that was randomly selected. So,
-    array2Cards.push(current_card);
-    array1Cards.pop(current_card);}
-    //add pt to scoreboard
-    selectArray1Card();
+    let current_card = $("#celebrityName").text();
+    let arrayNumb= array1Cards.indexOf("current_Card");
+    let mainEvent= array1Cards["arrayNumb"];
+    array2Cards.push("mainEvent");
+    array1Cards.splice("arrayNumb", 1);
+    //add to scoreboard
+    selectArray1Card();//is this the way to call back to the rendom # function?
 });
 
 $pass.on("click",()=>{
-//new randomly selected card
-    selectArray1Card();
+    selectArray1Card();//new randomly selected card
 });
 
 $start2.on({
