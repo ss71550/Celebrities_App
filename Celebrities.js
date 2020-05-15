@@ -30,7 +30,7 @@ $(document).ready(() => {
   let $startTimer= $("#startTimer");
 
   let $team1= $("team1");
-  let $team1= $("team1");
+  let $team2= $("team2");
 
   let $teamUp1= $("#teamUp1");
   let $teamUp2= $("#teamUp2");
@@ -61,7 +61,7 @@ $finishedCards.on({
 $beginGame.on({
     click: () => {
       $round1.show();
-      $teamUp1.textContent= "team_name1";
+      $teamUp1.text(team_name1);
       $step2.hide();
     }
 });
@@ -72,8 +72,8 @@ $beginGame.on({
     click: () => {
       $round1.hide();
       $gameBoard.show();
-    $team1.textContent= "team_name1";
-    $team2.textContent= "team_name2";
+    $team1.text(team_name1);
+    $team2.text(team_name2);
     }
 });
 
@@ -96,7 +96,7 @@ function selectArray1Card(){
  var celebName= array1Cards[randomNum];
  let $celebrityName= $("#celebrityName");
  //check that += thing right
- $celebrityName.textContent += "celebName";
+ $celebrityName.text(celebName);
 }
 
 
