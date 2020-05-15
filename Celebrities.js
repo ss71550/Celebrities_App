@@ -32,7 +32,7 @@ $(document).ready(() => {
   let $team1= $("team1");
   let $team2= $("team2");
 
-  let $teamUp1= $("#teamUp1");
+  //let $teamUp1= $("#teamUp1");
   let $teamUp2= $("#teamUp2");
 
 $getStartedButton.on({
@@ -55,14 +55,20 @@ $finishedCards.on({
     }
 });
 
-    let team_name1 = $("#name1").val();
-    let team_name2 = $("#name2").val();//let's remember to make these values fill in the blanks
+    let team_name1 =$("#name1").val();
+    let team_name2 =$("#name2").val();//let's remember to make these values fill in the blanks
 
 $beginGame.on({
     click: () => {
       $round1.show();
-      $teamUp1.text(team_name1);
       $step2.hide();
+
+    //this not working
+      let curentText= $teamUp1.text();
+      let $teamUp1= $("#teamUp1");
+    //most likely because for some reason this value is in the wrong format when I try it on the console
+      $teamUp1.text(currentText + $("#name1").val());
+
     }
 });
 
@@ -72,6 +78,7 @@ $beginGame.on({
     click: () => {
       $round1.hide();
       $gameBoard.show();
+      selectArray1Card();
     $team1.text(team_name1);
     $team2.text(team_name2);
     }
@@ -95,13 +102,13 @@ function selectArray1Card(){
  var randomNum= Math.floor(Math.random()*numb);
  var celebName= array1Cards[randomNum];
  let $celebrityName= $("#celebrityName");
- //check that += thing right
  $celebrityName.text(celebName);
 }
 
 
 let array2Cards= [];//round 2 card array
 $gotIt.on("click",()=>{
+
     let current_card = $("#celebrityName").text();
     let arrayNumb= array1Cards.indexOf("current_Card");
     let mainEvent= array1Cards["arrayNumb"];
