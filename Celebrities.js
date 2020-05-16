@@ -64,8 +64,8 @@ $beginGame.on({
       $step2.hide();
 
     //this not working
-      let curentText= $teamUp1.text();
       let $teamUp1= $("#teamUp1");
+      let curentText= $teamUp1.text();
     //most likely because for some reason this value is in the wrong format when I try it on the console
       $teamUp1.text(currentText + $("#name1").val());
 
