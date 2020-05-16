@@ -115,13 +115,17 @@ $gotIt.on("click",()=>{
     array2Cards.push("mainEvent");
     array1Cards.splice("arrayNumb", 1);
     //add to scoreboard
-
+   let scoreboard1Value= $team1Scoreboard.text
     selectArray1Card();//is this the way to call back to the rendom # function?
 });
 
 $pass.on("click",()=>{
     selectArray1Card();//new randomly selected card
 });
+
+//scoreboards
+    let $team1Scoreboard= $("#team1Score");
+    let $team2Scoreboard= $("#team2Score")
 
 $start2.on({
     click: () => {
