@@ -108,6 +108,7 @@ function selectArray1Card(){
  let $celebrityName= $("#celebrityName");
  $celebrityName.text(celebName);
 }
+
 //scoreboards
 let $team1Scoreboard= $("#team1Score");
 let $team2Scoreboard= $("#team2Score");
