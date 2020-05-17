@@ -110,9 +110,9 @@ function selectArray1Card(){
 }
 //scoreboards
 let $team1Scoreboard= $("#team1Score");
-    $team1Scoreboard= 0;
+    let l = 0;
 let $team2Scoreboard= $("#team2Score");
-    $team2Scoreboard= 0;
+    let r = 0;
 let teamCounter= 0;
 
 let array2Cards= [];//round 2 card array
@@ -132,18 +132,18 @@ $gotIt.on("click",()=>{
     var y= 2;
     var c= x%y;
         if(c==0){
-            i=1;
+            i=2;
         } else{
-            i=2
+            i=1
         }
 
     if (i==1){
-        let scoreboard1Value= $team1Scoreboard.text;
-        scoreboard1Value = scoreboard1Value +1;
+        let l = l + 1;
+        $team1Scoreboard.text(l);
         selectArray1Card();}
     else {
-        let scoreboard2Value= $team2Scoreboard.text;
-        scoreboard2Value = scoreboard2Value +1;
+        let r = r + 1;
+        $team2Scoreboard.text(l);
         selectArray1Card();}
 });
 
