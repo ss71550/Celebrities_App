@@ -138,7 +138,7 @@ $gotIt.on("click",()=>{
         }
 
     if (i==1){
-<<<<<<< HEAD
+
         let l = l + 1;
         $team1Scoreboard.text(l);
         selectArray1Card();}
@@ -146,12 +146,7 @@ $gotIt.on("click",()=>{
         let r = r + 1;
         $team2Scoreboard.text(l);
         selectArray1Card();}
-});
-=======
-    let scoreboard1Value= $team1Scoreboard.text
->>>>>>> origin/master
 
-    selectArray1Card();//is this the way to call back to the rendom # function?
 });
 
 $pass.on("click",()=>{
@@ -167,7 +162,7 @@ $start2.on({
     }
 });
 
-//FIGURE OUT HOW TO SHOW TEAMSUP MESSAGE FOR MULTOPE DIFFERENT ROUNDS, but same button
+//TEAMSUP MESSAGE goes according to odd/even thing that Grace made
 
 //60 second count down timer
     //have it so it starts timer when randomly selected card shows
