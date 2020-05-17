@@ -123,9 +123,7 @@ $gotIt.on("click",()=>{
     array1Cards.splice("arrayNumb", 1);
 
     //add to scoreboard
-<<<<<<< HEAD
-    let scoreboard1Value= $team1Scoreboard.text;
-=======
+
     teamCounter= teamCounter+1;
     var i = 6
     var x= teamCounter;
@@ -139,7 +137,7 @@ $gotIt.on("click",()=>{
 
     if (i==1){
     let scoreboard1Value= $team1Scoreboard.text
->>>>>>> master/master
+
     selectArray1Card();//is this the way to call back to the rendom # function?
 });
 
