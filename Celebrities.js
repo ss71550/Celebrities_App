@@ -32,7 +32,7 @@ $(document).ready(() => {
   let $team1= $("#team1");
   let $team2= $("#team2");
 
-  //let $teamUp1= $("#teamUp1");
+
   let $teamUp2= $("#teamUp2");
 
 $getStartedButton.on({
@@ -110,9 +110,7 @@ function selectArray1Card(){
 }
 //scoreboards
 let $team1Scoreboard= $("#team1Score");
-    $team1Scoreboard= 0;
 let $team2Scoreboard= $("#team2Score");
-    $team2Scoreboard= 0;
 let teamCounter= 0;
 
 let array2Cards= [];//round 2 card array
@@ -138,15 +136,10 @@ $gotIt.on("click",()=>{
         }
 
     if (i==1){
-        let scoreboard1Value= $team1Scoreboard.text;
-        scoreboard1Value = scoreboard1Value +1;
-        selectArray1Card();}
-    else {
-        let scoreboard2Value= $team2Scoreboard.text;
-        scoreboard2Value = scoreboard2Value +1;
-        selectArray1Card();}
-});
+    let scoreboard1Value= $team1Scoreboard.text
 
+    selectArray1Card();//is this the way to call back to the rendom # function?
+});
 
 $pass.on("click",()=>{
     selectArray1Card();//new randomly selected card
