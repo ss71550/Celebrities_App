@@ -29,8 +29,8 @@ $(document).ready(() => {
 
   let $startTimer= $("#startTimer");
 
-  let $team1= $("team1");
-  let $team2= $("team2");
+  let $team1= $("#team1");
+  let $team2= $("#team2");
 
   //let $teamUp1= $("#teamUp1");
   let $teamUp2= $("#teamUp2");
@@ -55,18 +55,17 @@ $finishedCards.on({
     }
 });
 
-    let team_name1 =$("#name1").val();
-    let team_name2 =$("#name2").val();//let's remember to make these values fill in the blanks
+    //delete: let team_name1 =$("#name1").val();
+   // let team_name2 =$("#name2").val();//let's remember to make these values fill in the blanks
 
 $beginGame.on({
     click: () => {
       $round1.show();
       $step2.hide();
 
-    //this not working
+    //this is working
       let $teamUp1= $("#teamUp1");
       let currentText= $teamUp1.text();
-    //most likely because for some reason this value is in the wrong format when I try it on the console
       $teamUp1.text(currentText + $("#name1").val());
 
     }
@@ -79,8 +78,13 @@ $beginGame.on({
       $round1.hide();
       $gameBoard.show();
       selectArray1Card();
-    $team1.text(team_name1);
-    $team2.text(team_name2);
+
+    let currentPrint1= $team1.text();
+    let currentPrint2= $team2.text();
+    $team1.text(currentPrint1 + $("#name1").val());
+    $team2.text(currentPrint1 + $("#name2").val());
+
+
     }
 });
 
@@ -121,6 +125,7 @@ $gotIt.on("click",()=>{
     array1Cards.splice("arrayNumb", 1);
 
     //add to scoreboard
+
     teamCounter= teamCounter+1;
     var i = 6
     var x= teamCounter;
