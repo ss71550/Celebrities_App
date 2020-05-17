@@ -125,7 +125,8 @@ $gotIt.on("click",()=>{
     array2Cards.push("mainEvent");
     array1Cards.splice("arrayNumb", 1);
 
-    //add to scoreboard
+    //add to scoreboard. THIS IS ACTUALLY WRONG...Needs to be change in odd and even according to timer, not got it, as multiple //got its will happen per turn
+
     teamCounter= teamCounter+1;
     var i = 6
     var x= teamCounter;
