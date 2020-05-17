@@ -104,7 +104,10 @@ function selectArray1Card(){
  let $celebrityName= $("#celebrityName");
  $celebrityName.text(celebName);
 }
-
+//scoreboards
+let $team1Scoreboard= $("#team1Score");
+let $team2Scoreboard= $("#team2Score");
+let teamCounter= 0;
 
 let array2Cards= [];//round 2 card array
 $gotIt.on("click",()=>{
@@ -114,8 +117,21 @@ $gotIt.on("click",()=>{
     let mainEvent= array1Cards["arrayNumb"];
     array2Cards.push("mainEvent");
     array1Cards.splice("arrayNumb", 1);
+
     //add to scoreboard
-   let scoreboard1Value= $team1Scoreboard.text
+    teamCounter= teamCounter+1;
+    var i = 6
+    var x= teamCounter;
+    var y= 2;
+    var c= x%y;
+        if(c==0){
+            i=1;
+        } else{
+            i=2
+        }
+
+    if (i==1){
+    let scoreboard1Value= $team1Scoreboard.text
     selectArray1Card();//is this the way to call back to the rendom # function?
 });
 
@@ -123,9 +139,7 @@ $pass.on("click",()=>{
     selectArray1Card();//new randomly selected card
 });
 
-//scoreboards
-    let $team1Scoreboard= $("#team1Score");
-    let $team2Scoreboard= $("#team2Score")
+
 
 $start2.on({
     click: () => {
