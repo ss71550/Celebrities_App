@@ -127,18 +127,17 @@ $gotIt.on("click",()=>{
 
     //add to scoreboard
     teamCounter= teamCounter+1;
-    var i = 6
-    var x= teamCounter;
+    var i = 6//this is just to initialize the variable
+    var x= teamCounter;//this code is to get even/odd
     var y= 2;
     var c= x%y;
         if(c==0){
             i=2;
         } else{
             i=1
-        }
+        }//get this to be triggered instead by the timer ending
 
     if (i==1){
-<<<<<<< HEAD
         let l = l + 1;
         $team1Scoreboard.text(l);
         selectArray1Card();}
@@ -146,12 +145,6 @@ $gotIt.on("click",()=>{
         let r = r + 1;
         $team2Scoreboard.text(l);
         selectArray1Card();}
-});
-=======
-    let scoreboard1Value= $team1Scoreboard.text
->>>>>>> origin/master
-
-    selectArray1Card();//is this the way to call back to the rendom # function?
 });
 
 $pass.on("click",()=>{
