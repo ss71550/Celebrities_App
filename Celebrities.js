@@ -89,10 +89,10 @@ $beginGame.on({
 });
 
    // let $teamName= $("#teamName");
-
+let teamCounter= 0;//establish counter variable
 $startTimer.on({
    click: () => {
-
+       teamCounter = teamCounter+1;
        timerStart();
 
 
@@ -112,43 +112,68 @@ function selectArray1Card(){
  $celebrityName.text(celebName);
 }
 
+//TEAMSUP MESSAGE goes according to odd/even thing that Grace made
+
+//60 second count down timer
+    //have it so it starts timer when randomly selected card shows
+let $time = $("#timer");
+
+function timerStart() {
+
+  timerId = setInterval(timerFunction, 1000);
+
+  let countDown = 60;
+
+    function timerFunction(){
+  //for(let a=0; a<= 60; a++){
+    countDown = countDown - 1;
+
+    if (countDown < 0){
+     countDown = 0;
+        //checks if more cards, if not, shows next round--SOPHIE DOES THIS
+    }
+
+    else{
+    $time.text(countDown);
+    }
+}
+
+}
+
 //scoreboards
 let $team1Scoreboard= $("#team1Score");
     let l = 0;
 let $team2Scoreboard= $("#team2Score");
     let r = 0;
-let teamCounter= 0;
+
 
 let array2Cards= [];//round 2 card array
 $gotIt.on("click",()=>{
     //adding card to new array and taking out of old one
     let current_card = $("#celebrityName").text();
-    let arrayNumb= array1Cards.indexOf("current_Card");
-    let mainEvent= array1Cards["arrayNumb"];
-    array2Cards.push("mainEvent");
-    array1Cards.splice("arrayNumb", 1);
+    let arrayNumb= array1Cards.indexOf(current_card);
+    let mainEvent= array1Cards[arrayNumb];
+    array2Cards.push(mainEvent);
+    array1Cards.splice(arrayNumb, 1);
 
-    //add to scoreboard. THIS IS ACTUALLY WRONG...Needs to be change in odd and even according to timer, not got it, as multiple //got its will happen per turn
-
-    teamCounter= teamCounter+1;
-    var i = 6//this is just to initialize the variable
-    var x= teamCounter;//this code is to get even/odd
-    var y= 2;
-    var c= x%y;
+    var c= teamCounter%2;//intead of teamCounter have a box that says who's turn it is
         if(c==0){
-            i=2;
+           var i=2;
         } else{
-            i=1
-        }//get this to be triggered instead by the timer ending
+            var i=1;
+        }
+
+
 
     if (i==1){
-        let l = l + 1;
+        l = l + 1;
         $team1Scoreboard.text(l);
         selectArray1Card();}
-    else {
-        let r = r + 1;
-        $team2Scoreboard.text(l);
+    else if (i==2) {
+        r = r + 1;
+        $team2Scoreboard.text(r);
         selectArray1Card();}
+    else{}
 });
 
 $pass.on("click",()=>{
@@ -164,36 +189,7 @@ $start2.on({
     }
 });
 
-//TEAMSUP MESSAGE goes according to odd/even thing that Grace made
-
-//60 second count down timer
-    //have it so it starts timer when randomly selected card shows
-let $time = $("#timer");
-
-function timerStart() {
-
-  timerId = setInterval(timerFunction, 1000);
-
-  let countDown = 60;
-
-function timerFunction(){
-  //for(let a=0; a<= 60; a++){
-    countDown = countDown - 1;
-
-    if (countDown < 0){
-     countDown = 0;
-
-        //goes to next team (change message)
-        //checks if more cards, if not, shows next round
-    }
-
-    else{
-    $time.text(countDown);
-    }
 
 
-}
-
-}
 
 })
