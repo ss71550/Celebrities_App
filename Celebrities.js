@@ -125,7 +125,8 @@ $gotIt.on("click",()=>{
     array2Cards.push("mainEvent");
     array1Cards.splice("arrayNumb", 1);
 
-    //add to scoreboard
+    //add to scoreboard. THIS IS ACTUALLY WRONG...Needs to be change in odd and even according to timer, not got it, as multiple //got its will happen per turn
+
     teamCounter= teamCounter+1;
     var i = 6//this is just to initialize the variable
     var x= teamCounter;//this code is to get even/odd
@@ -160,7 +161,7 @@ $start2.on({
     }
 });
 
-//FIGURE OUT HOW TO SHOW TEAMSUP MESSAGE FOR MULTOPE DIFFERENT ROUNDS, but same button
+//TEAMSUP MESSAGE goes according to odd/even thing that Grace made
 
 //60 second count down timer
     //have it so it starts timer when randomly selected card shows
