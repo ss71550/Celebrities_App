@@ -77,7 +77,7 @@ $beginGame.on({
     click: () => {
       $round1.hide();
       $gameBoard.show();
-      selectArray1Card();
+
 
     let currentPrint1= $team1.text();
     let currentPrint2= $team2.text();
@@ -92,10 +92,13 @@ $beginGame.on({
 
 $startTimer.on({
    click: () => {
-       timerFunction();
+
+       timerStart();
+
+
 
     //  $teamName.textContent += "You're up";
-     // selectArray1Card();
+      selectArray1Card();
 }
 });
 
@@ -165,31 +168,32 @@ $start2.on({
 
 //60 second count down timer
     //have it so it starts timer when randomly selected card shows
+let $time = $("#timer");
 
-  function timerFunction() {
+function timerStart() {
 
-       let $time = $("#timer");
-  timerId = setInterval(timerFunction, 10);
-  let start = new Date();// current time
-  let alarmInterval = 600;
-  let countDown = 600;
-  let alarm = start.getTime() + alarmInterval;  // Set the alarm
+  timerId = setInterval(timerFunction, 1000);
 
-    // Check the time
-    let now = new Date();
-    let currentTime = now.getTime();
+  let countDown = 60;
 
-    // Update the timer text
-    if (countDown < 0) {
-      countDown = 0;
-      clearInterval(timerId);
-        //goes to next team, new card displayed
+function timerFunction(){
+  //for(let a=0; a<= 60; a++){
+    countDown = countDown - 1;
+
+    if (countDown < 0){
+     countDown = 0;
+
+        //goes to next team (change message)
         //checks if more cards, if not, shows next round
-    } else {
-      countDown = countDown - .1;
     }
-    $time.text(Math.floor(countDown)/10);
-  }
 
+    else{
+    $time.text(countDown);
+    }
+
+
+}
+
+}
 
 })
