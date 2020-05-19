@@ -42,6 +42,10 @@ $(document).ready(() => {
 
   let $hideRound1= $(".round1");
 
+    //round 2 buttons
+  let $startTimer2 = $("#startTimer2");
+  let $gotIt2 = $("#gotIt2");
+  let $pass2 = $("#pass2");
 
 $getStartedButton.on({
     click: () => {
@@ -236,6 +240,122 @@ $start2.on({
 });
 
 
+function selectArray2Card(){
+ let numb2= array2Cards.length;
+ var randomNum2= Math.floor(Math.random()*numb2);
+ var celebName= array2Cards[randomNum2];//do we have to make this celebName2?
+ let $celebrityName= $("#celebrityName");
+ $celebrityName.text(celebName);
+}
+
+teamCounter2 = 1;
+$startTimer2.on({
+   click: () => {
+       teamCounter2 = teamCounter2+1;
+       timerStart2();
+
+ var e= teamCounter2%2;//intead of teamCounter have a box that says who's turn it is
+        if(e==0){
+        //var e=2;//team 2's turn
+            $team2Up.text("Your turn");
+            $team1Up.text(" ");
+        }
+        else{
+          //  var e=1;//team 1's turn
+            $team1Up.text("Your turn");
+            $team2Up.text(" ");
+        }
+
+    //  $teamName.textContent += "You're up";
+      selectArray2Card();
+}
+});
+    let $time2 = $("#timer2");
+
+function timerStart2() {
+
+  let timerId = setInterval(timerFunction2, 1000);
+
+  let countDown = 60;
+
+  function timerFunction2(){
+
+    countDown = countDown - 1;
+
+    if (countDown < 0){
+     countDown = 0;
+    }
+
+    else{
+    $time2.text(countDown);
+    }
+}
+
+}
+
+
+let doneCards= [];//done card array
+
+$gotIt2.on("click",()=>{
+    //adding card to new array and taking out of old one
+    let current_card2 = $("#celebrityName").text();
+    let arrayNumb2= array2Cards.indexOf(current_card2);
+    let mainEvent2= array2Cards[arrayNumb2];
+    doneCards.push(mainEvent2);
+    array2Cards.splice(arrayNumb2, 1);
+
+    if (array2Cards.length == 0){
+        let $Congrats= $("#Congrats");
+        $Congrats.show();
+        $round2.hide();
+        $gameBoard.hide();
+        $showRound2.hide();
+
+        let $winnerMessage= $("#winnerMessage");
+        //Read score board, offer two diff messages
+        var team1FinalScore= $team1Scoreboard.text();
+        var team2FinalScore= $team2Scoreboard.text();
+
+        if (team1FinalScore> team2FinalScore){
+            $winnerMessage.text("Congrats Team__, you are the winner!");//sophie can you figure out how to get the names in the blanks?
+         }
+        else if (team2FinalScore> team1FinalScore){
+            $winnerMessage.text("Congrats Team__, you are the winner!");
+        }
+        else {
+            $winnerMessage.text("Congrats on a tie game! You all won!");
+        }
+
+     }
+
+    var n= teamCounter2%2;//intead of teamCounter have a box that says who's turn it is
+        if(n==0){
+           var u=2;
+        }
+        else{
+            var u=1;
+        }
+
+
+    if (u==1){
+        l = l + 1;
+        $team1Scoreboard.text(l);
+        selectArray2Card();
+    }
+    else {
+        r = r + 1;
+        $team2Scoreboard.text(r);
+        selectArray2Card();
+    }
+
+});
+
+
+
+
+$pass2.on("click",()=>{
+    selectArray2Card();//new randomly selected card
+});
 
 
 })

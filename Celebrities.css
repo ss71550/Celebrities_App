@@ -21,7 +21,13 @@ background-color: lightblue;
   float: left;
   text-align: center;
 }
-
+#timerText{
+  font-family: inherit;
+  font-size: 20px;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
 .teamBox2{
  background-color: lightcoral;
   margin: 2%;
@@ -60,20 +66,52 @@ z-index: 1;
 position: relative;
 }
 #timer{
-  background-color: beige;
+  background-color: mediumpurple;
+  margin: 1%;
+  padding: 1%;
+  width: 10%;
+  height: 10%;
+  font-family: inherit;
+  font-size: 30px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: -90px;
+  text-align: center;
+}
+#timer2{
+  background-color: mediumpurple;
   margin: 2%;
   padding: 1%;
-  border: 5px pink;
+  border: 10px pink;
   width: 10%;
   height: 20%;
   position: relative;
-  margin-left: 500px;
-  margin-bottom: 1px;
+  margin: 0 auto;
+  margin-top: -90px;
   text-align: center;
 }
 
 #startTimer{
-    background-color: lightgreen;
+  background-color: lightgreen;
+  margin: 2%;
+  padding: 1%;
+  border: 10px pink;
+  width: 10%;
+  height: 20%;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+#startTimer2{
+  background-color: lightgreen;
+  margin: 2%;
+  padding: 1%;
+  border: 10px pink;
+  width: 10%;
+  height: 20%;
+  position: relative;
+  margin: auto;
+  text-align: center;
 }
 
 #add_Card{
@@ -93,7 +131,13 @@ background: beige;
 #pass{
   background-color: red;
 }
+#pass2{
+  background-color: red;
+}
 #gotIt{
+    background-color: lightgreen;
+}
+#gotIt2{
     background-color: lightgreen;
 }
 
@@ -119,4 +163,7 @@ margin: 30px;
 }
 #team2Up{
    color: blue;
+}
+h4{
+    font-size: 30px;
 }
