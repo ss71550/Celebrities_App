@@ -41,7 +41,7 @@
     </div>
 
     <div id="round1" class="popUps">
-        <h1>Round 1</h1>
+        <h1 > Round 1</h1>
         <h2> This is your first time seeing the cards, so, in this round, the acting team member can say anything but the celebrity's name.You have a minute to go through as many cards as possible.</h2>
         <h3 id="teamUp1">Team </h3>
         <h3>is up for the first minute!</h3>
@@ -51,7 +51,7 @@
     <div id="round2" class="popUps">
         <h1>Round 2</h1>
         <h2> In this round, the acting team member can ONLY say 3 words. Chose carefully!You have a minute to go through as many cards as possible.</h2>
-        <h3 id="teamUp2">Team __</h3>
+        <h3 id="teamUp2">Team </h3>
         <h3>is up for the first minute!</h3>
 
         <button id="start2">Start Round 2</button>
@@ -60,12 +60,12 @@
     <!--gameBoard div-->
 
     <div id="gameBoard">
-        <h2>Round __</h2>
+        <h2 id="Round"> </h2>
         <h3>Act this out:</h3>
         <div id="cardDisplay">
             <h3 id="celebrityName"></h3>
-            <button id="pass">Pass</button>
-            <button id="gotIt">Got It!</button>
+            <button class= "round1" id="pass">Pass</button>
+            <button class= "round1" id="gotIt">Got It!</button>
         </div>
 
         <div class="teamBox1">
@@ -81,13 +81,17 @@
         </div>
 
         <h2>Start Timer when you're ready for your card</h2>
-        <button id="startTimer">Start</button>
+        <button class= "round1" id="startTimer">Start</button>
 
         <div id="timer">
 
         </div>
 
     </div>
+<!-- check that its ok that thay have the same ids-->
+        <button class= "round2" id="pass2">Pass</button>
+        <button class= "round2" id="gotIt2">Got It!</button>
+        <button class= "round2" id="startTimer2">Start</button>
 
     <div id="Congrats" class="popUps">
         <h2>Congrats (Team), you are the winner!</h2>

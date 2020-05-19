@@ -1,8 +1,13 @@
 $(document).ready(() => {
   let $popUps= $(".popUps");
   let $gameBoard = $("#gameBoard");
+  let $showRound2= $(".round2");
+
   $popUps.hide();
   $gameBoard.hide();
+  $showRound2.hide();
+
+
 
 //javascript only fetching step one for id, when should fetch all divs
 
@@ -34,6 +39,9 @@ $(document).ready(() => {
 
 
   let $teamUp2= $("#teamUp2");
+
+  let $hideRound1= $(".round1");
+
 
 $getStartedButton.on({
     click: () => {
@@ -68,6 +76,7 @@ $beginGame.on({
       let currentText= $teamUp1.text();
       $teamUp1.text(currentText + $("#name1").val());
 
+
     }
 });
 
@@ -78,6 +87,9 @@ $beginGame.on({
       $round1.hide();
       $gameBoard.show();
 
+    //do same thing for when start 2 button pushed
+    let $Round= $("#Round");
+    $Round.text("Round 1");
 
     let currentPrint1= $team1.text();
     let currentPrint2= $team2.text();
@@ -171,8 +183,12 @@ $gotIt.on("click",()=>{
     if (array1Cards.length == 0){
         //let $celebrityName= $("#celebrityName");
        // $celebrityName.text("next round");
-        $round2.show;
-        $gameBoard.hide;
+        $round2.show();
+        $gameBoard.hide();
+
+        let $teamUp2= $("#teamUp2");
+        let currentText2= $teamUp2.text();
+        $teamUp2.text(currentText2 + $("#name2").val());
      }
 
     var c= teamCounter%2;//intead of teamCounter have a box that says who's turn it is
@@ -208,6 +224,14 @@ $start2.on({
     click: () => {
       $round2.hide();
       $gameBoard.show();
+
+      $hideRound1.hide();
+      $showRound2.show();
+
+
+    let $Round= $("#Round");
+    $Round.text("Round 2");
+
     }
 });
 
