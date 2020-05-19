@@ -90,12 +90,25 @@ $beginGame.on({
 
    // let $teamName= $("#teamName");
 let teamCounter= 0;//establish counter variable
+let $team1Up= $("#team1Up");
+let $team2Up= $("#team2Up");
+
 $startTimer.on({
    click: () => {
        teamCounter = teamCounter+1;
        timerStart();
 
-
+ var c= teamCounter%2;//intead of teamCounter have a box that says who's turn it is
+        if(c==0){
+        //var i=2;//team 2's turn
+            $team2Up.text("Your turn");
+            $team1Up.text(" ");
+        }
+        else{
+          //  var i=1;//team 1's turn
+            $team1Up.text("Your turn");
+            $team2Up.text(" ");
+        }
 
     //  $teamName.textContent += "You're up";
       selectArray1Card();
@@ -112,25 +125,24 @@ function selectArray1Card(){
  $celebrityName.text(celebName);
 }
 
-//TEAMSUP MESSAGE goes according to odd/even thing that Grace made
-
 //60 second count down timer
-    //have it so it starts timer when randomly selected card shows
+
 let $time = $("#timer");
 
 function timerStart() {
 
-  timerId = setInterval(timerFunction, 1000);
+  let timerId = setInterval(timerFunction, 1000);
 
   let countDown = 60;
 
-    function timerFunction(){
-  //for(let a=0; a<= 60; a++){
+  function timerFunction(){
+
     countDown = countDown - 1;
 
     if (countDown < 0){
      countDown = 0;
-        //checks if more cards, if not, shows next round--SOPHIE DOES THIS
+
+
     }
 
     else{
@@ -146,8 +158,8 @@ let $team1Scoreboard= $("#team1Score");
 let $team2Scoreboard= $("#team2Score");
     let r = 0;
 
-
 let array2Cards= [];//round 2 card array
+
 $gotIt.on("click",()=>{
     //adding card to new array and taking out of old one
     let current_card = $("#celebrityName").text();
@@ -156,25 +168,35 @@ $gotIt.on("click",()=>{
     array2Cards.push(mainEvent);
     array1Cards.splice(arrayNumb, 1);
 
+    if (array1Cards.length == 0){
+        //let $celebrityName= $("#celebrityName");
+       // $celebrityName.text("next round");
+        $round2.show;
+        $gameBoard.hide;
+     }
+
     var c= teamCounter%2;//intead of teamCounter have a box that says who's turn it is
         if(c==0){
            var i=2;
-        } else{
+        }
+        else{
             var i=1;
         }
-
 
 
     if (i==1){
         l = l + 1;
         $team1Scoreboard.text(l);
-        selectArray1Card();}
-    else if (i==2) {
+        selectArray1Card();
+    }
+    else {
         r = r + 1;
         $team2Scoreboard.text(r);
-        selectArray1Card();}
-    else{}
+        selectArray1Card();
+    }
+
 });
+
 
 $pass.on("click",()=>{
     selectArray1Card();//new randomly selected card
