@@ -26,6 +26,7 @@ $(document).ready(() => {
 
   let $round2 = $("#round2");
   let $start2 = $("#start2");
+  let $win= $("#win");
 
 
   let $pass= $("#pass");
@@ -305,8 +306,7 @@ $gotIt2.on("click",()=>{
     array2Cards.splice(arrayNumb2, 1);
 
     if (array2Cards.length == 0){
-        let $Congrats= $("#Congrats");
-        $Congrats.show();
+        $win.show();
         $round2.hide();
         $gameBoard.hide();
         $showRound2.hide();
