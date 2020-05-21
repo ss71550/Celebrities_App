@@ -313,17 +313,18 @@ $gotIt2.on("click",()=>{
 
         let $winnerMessage= $("#winnerMessage");
         //Read score board, offer two diff messages
-        var team1FinalScore= $team1Scoreboard.text();
-        var team2FinalScore= $team2Scoreboard.text();
+        var team1FinalScore= parseInt($team1Scoreboard.text());
+        //this not working. need to find a way to have it read score as number so can compare the two numbers
+        var team2FinalScore= parseInt($team2Scoreboard.text());
 
         if (team1FinalScore> team2FinalScore){
-            $winnerMessage.text("Congrats Team__, you are the winner!");//sophie can you figure out how to get the names in the blanks?
+            $winnerMessage.text($teamUp1);//sophie can you figure out how to get the names in the blanks?
          }
         else if (team2FinalScore> team1FinalScore){
-            $winnerMessage.text("Congrats Team__, you are the winner!");
+            $winnerMessage.text($teamUp2);
         }
         else {
-            $winnerMessage.text("Congrats on a tie game! You all won!");
+            $winnerMessage.text("both teams");
         }
 
      }
