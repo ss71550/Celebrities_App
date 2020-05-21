@@ -307,7 +307,7 @@ $gotIt2.on("click",()=>{
 
     if (array2Cards.length == 0){
         $win.show();
-        $round2.hide();
+       // $round2.hide();
         $gameBoard.hide();
         $showRound2.hide();
 
