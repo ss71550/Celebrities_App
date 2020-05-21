@@ -71,7 +71,7 @@ z-index: 1;
 position: relative;
 }
 #timer{
-  background-color: mediumpurple;
+  background-color: aliceblue;
   margin: 1%;
   padding: 1%;
   width: 40%;
@@ -84,7 +84,7 @@ position: relative;
   text-align: center;
 }
 #timer2{
-  background-color: mediumpurple;
+  background-color: aliceblue;
   margin: 1%;
   padding: 1%;
   width: 40%;
@@ -93,19 +93,18 @@ position: relative;
   font-size: 30px;
   position: relative;
   margin: 0 auto;
-  margin-top: -100px;
+  margin-top: -190px;
   text-align: center;
-  z-index: 0;
 }
 
 #startTimer{
   background-color: lightgreen;
   margin: 2%;
   padding: 1%;
-  width: 45%;
-  height: 10%;
+  width: 10%;
+  height: 16%;
   position: relative;
-  margin: 0 auto;
+  margin-right: 120px;
   text-align: center;
   z-index: 1;
 }
@@ -113,11 +112,10 @@ position: relative;
   background-color: lightgreen;
   margin: 2%;
   padding: 1%;
-  border: 10px pink;
-  width: 45%;
-  height: 10%;
+  width: 10%;
+  height: 16%;
   position: relative;
-  margin: auto;
+  margin-right: 120px;
   text-align: center;
   z-index: 1;
 }
@@ -145,8 +143,6 @@ text-align: center;
 }
 #pass2{
   background-color: red;
- z-index: 1;
- margin: auto;
 }
 #gotIt{
     background-color: lightgreen;
