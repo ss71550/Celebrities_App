@@ -48,6 +48,8 @@ $(document).ready(() => {
   let $gotIt2 = $("#gotIt2");
   let $pass2 = $("#pass2");
 
+  let $playAgain= $("#playAgain")
+
 $getStartedButton.on({
     click: () => {
       $step1.show();
@@ -312,16 +314,17 @@ $gotIt2.on("click",()=>{
         $showRound2.hide();
 
         let $winnerMessage= $("#winnerMessage");
+        let $teamUp1= $("#teamUp1");
         //Read score board, offer two diff messages
         var team1FinalScore= parseInt($team1Scoreboard.text());
         //this not working. need to find a way to have it read score as number so can compare the two numbers
         var team2FinalScore= parseInt($team2Scoreboard.text());
 
         if (team1FinalScore> team2FinalScore){
-            $winnerMessage.text($teamUp1);//sophie can you figure out how to get the names in the blanks?
+            $winnerMessage.text($teamUp1.text());
          }
         else if (team2FinalScore> team1FinalScore){
-            $winnerMessage.text($teamUp2);
+            $winnerMessage.text($teamUp2.text());
         }
         else {
             $winnerMessage.text("both teams");
@@ -356,7 +359,13 @@ $gotIt2.on("click",()=>{
 
 $pass2.on("click",()=>{
     selectArray2Card();//new randomly selected card
+
 });
 
+
+$playAgain.on("click", ()=>{
+    $welcome.show();
+    $win.hide();
+});
 
 })
