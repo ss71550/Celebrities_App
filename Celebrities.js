@@ -7,10 +7,6 @@ $(document).ready(() => {
     $gameBoard.hide();
     $showRound2.hide();
 
-
-
-    //javascript only fetching step one for id, when should fetch all divs
-
     let $welcome = $("#welcome");
     let $getStartedButton = $("#getStarted");
 
@@ -70,8 +66,6 @@ $(document).ready(() => {
         }
     });
 
-    //delete: let team_name1 =$("#name1").val();
-    // let team_name2 =$("#name2").val();//let's remember to make these values fill in the blanks
 
     $beginGame.on({
         click: () => {
@@ -117,7 +111,7 @@ $(document).ready(() => {
             teamCounter = teamCounter + 1;
             timerStart();
 
-            var c = teamCounter % 2; //intead of teamCounter have a box that says who's turn it is
+            var c = teamCounter % 2;
             if (c == 0) {
                 //var i=2;//team 2's turn
                 $team2Up.text("Your turn");
@@ -195,7 +189,7 @@ $(document).ready(() => {
             $teamUp2.text(currentText2 + $("#name2").val());
         }
 
-        var c = teamCounter % 2; //intead of teamCounter have a box that says who's turn it is
+        var c = teamCounter % 2;
         if (c == 0) {
             var i = 2;
         } else {
@@ -237,11 +231,11 @@ $(document).ready(() => {
         }
     });
 
-
+     //choose new card when got it or pass button pressed
     function selectArray2Card() {
         let numb2 = array2Cards.length;
         var randomNum2 = Math.floor(Math.random() * numb2);
-        var celebName = array2Cards[randomNum2]; //do we have to make this celebName2?
+        var celebName = array2Cards[randomNum2];
         let $celebrityName = $("#celebrityName");
         $celebrityName.text(celebName);
     }
@@ -252,7 +246,7 @@ $(document).ready(() => {
             teamCounter2 = teamCounter2 + 1;
             timerStart2();
 
-            var e = teamCounter2 % 2; //intead of teamCounter have a box that says who's turn it is
+            var e = teamCounter2 % 2;
             if (e == 0) {
                 //var e=2;//team 2's turn
                 $team2Up.text("Your turn");
@@ -289,9 +283,10 @@ $(document).ready(() => {
     }
 
 
-    let doneCards = []; //done card array
+    let doneCards = []; //done card array, Array2Cards go here when "got it" used
 
     $gotIt2.on("click", () => {
+
         //adding card to new array and taking out of old one
         let current_card2 = $("#celebrityName").text();
         let arrayNumb2 = array2Cards.indexOf(current_card2);
@@ -299,17 +294,16 @@ $(document).ready(() => {
         doneCards.push(mainEvent2);
         array2Cards.splice(arrayNumb2, 1);
 
+        //if no more cards in deck
         if (array2Cards.length == 0) {
             $win.show();
-            // $round2.hide();
             $gameBoard.hide();
             $showRound2.hide();
 
             let $winnerMessage = $("#winnerMessage");
             let $teamUp1 = $("#teamUp1");
-            //Read score board, offer two diff messages
+            //Read score board, offer two different messages
             var team1FinalScore = parseInt($team1Scoreboard.text());
-            //this not working. need to find a way to have it read score as number so can compare the two numbers
             var team2FinalScore = parseInt($team2Scoreboard.text());
 
             if (team1FinalScore > team2FinalScore) {
@@ -322,14 +316,15 @@ $(document).ready(() => {
 
         }
 
-        var n = teamCounter2 % 2; //intead of teamCounter have a box that says who's turn it is
+        //determines whether the team that is currently guessing is team 1 or 2
+        var n = teamCounter2 % 2;
         if (n == 0) {
             var u = 2;
         } else {
             var u = 1;
         }
 
-
+        //adds points to scoreboard, depending on which team is currently guessing
         if (u == 1) {
             l = l + 1;
             $team1Scoreboard.text(l);
